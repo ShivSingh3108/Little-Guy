@@ -71,4 +71,4 @@ func update_health_display() ->void:
 	var label=get_tree().current_scene.get_node_or_null("hud/health")
 	if label != null:
 		var current_health=clampi(health,0,3)
-		label.text="❤".repeat(current_health)+"🖤".repeat(3-current_health)
+		label.text="o".repeat(current_health)+"x".repeat(3-current_health)
