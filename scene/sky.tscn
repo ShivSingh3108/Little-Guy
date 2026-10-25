@@ -1,0 +1,131 @@
+[gd_scene format=3 uid="uid://c0t8b1mh2pu3x"]
+
+[ext_resource type="Script" uid="uid://einsiumynvra" path="res://script/sky.gd" id="1_mkyha"]
+[ext_resource type="Texture2D" uid="uid://b4iwk2reb51vy" path="res://assests/scene.png" id="1_wud5e"]
+[ext_resource type="Script" uid="uid://cfp4c5i3dvxo1" path="res://script/character_body_2d.gd" id="4_pd5at"]
+[ext_resource type="Texture2D" uid="uid://dtnmajgil4id" path="res://assests/fly.png" id="5_ub7th"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1vivr"]
+atlas = ExtResource("1_wud5e")
+region = Rect2(137.88281, 519.0991, 2163.728, 1012.0663)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c8hu1"]
+atlas = ExtResource("5_ub7th")
+region = Rect2(0, 0, 311, 816)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6i8ef"]
+atlas = ExtResource("5_ub7th")
+region = Rect2(311, 0, 311, 816)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_clvxu"]
+atlas = ExtResource("5_ub7th")
+region = Rect2(622, 0, 311, 816)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1vivr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c8hu1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6i8ef")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_clvxu")
+}],
+"loop": 1,
+"name": &"fly",
+"speed": 5.0
+}]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_pd5at"]
+a = Vector2(-30, 41.5)
+b = Vector2(23, -49.5)
+
+[sub_resource type="FontVariation" id="FontVariation_v5gy4"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_mkyha"]
+font = SubResource("FontVariation_v5gy4")
+font_size = 24
+font_color = Color(1, 0, 0, 1)
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 4
+shadow_color = Color(0, 0, 0, 0.627451)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8vrlf"]
+size = Vector2(161, 1407)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1vivr"]
+size = Vector2(2789.5, 78)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v5gy4"]
+size = Vector2(2733, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qbdty"]
+size = Vector2(758, 1315.5)
+
+[node name="sky" type="Node2D" unique_id=360058536]
+script = ExtResource("1_mkyha")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1200675683]
+position = Vector2(1149.0001, 677.74994)
+scale = Vector2(1.4803513, 1.3997036)
+texture = SubResource("AtlasTexture_1vivr")
+
+[node name="guy2" type="CharacterBody2D" parent="." unique_id=1534897407]
+position = Vector2(367, 303)
+script = ExtResource("4_pd5at")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="guy2" unique_id=311283883]
+position = Vector2(3, -54)
+scale = Vector2(0.47709003, 0.3897058)
+sprite_frames = SubResource("SpriteFrames_1vivr")
+animation = &"fly"
+frame_progress = 0.85516775
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="guy2" unique_id=1999053222]
+position = Vector2(20, -9.5)
+shape = SubResource("SegmentShape2D_pd5at")
+
+[node name="Camera2D" type="Camera2D" parent="guy2" unique_id=1410515447]
+position = Vector2(34, -24)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=212534025]
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=839360571]
+offset_left = 175.0
+offset_top = 466.0
+offset_right = 649.0
+offset_bottom = 517.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.49400002)
+theme_override_font_sizes/font_size = 20
+
+[node name="hud" type="CanvasLayer" parent="." unique_id=1204599735]
+
+[node name="health" type="Label" parent="hud" unique_id=1568038148]
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 86.0
+offset_bottom = 43.0
+text = "❤❤❤"
+label_settings = SubResource("LabelSettings_mkyha")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1897427557]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=977996051]
+position = Vector2(111, 687)
+shape = SubResource("RectangleShape2D_8vrlf")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=947913787]
+position = Vector2(1273.25, 1141)
+shape = SubResource("RectangleShape2D_1vivr")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=1813290965]
+position = Vector2(1356.5, 0)
+shape = SubResource("RectangleShape2D_v5gy4")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D" unique_id=1195492315]
+position = Vector2(2975, 593)
+shape = SubResource("RectangleShape2D_qbdty")

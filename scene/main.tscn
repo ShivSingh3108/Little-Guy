@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://ccr20wooy4fow"]
+
+[ext_resource type="PackedScene" uid="uid://cucajp28210mx" path="res://scene/guy.tscn" id="1_itxqv"]
+[ext_resource type="PackedScene" uid="uid://cxca7d03vi4j4" path="res://scene/green.tscn" id="2_v0l8b"]
+
+[node name="Main" type="Node2D" unique_id=1666981795]
+
+[node name="Main" parent="." unique_id=648205329 instance=ExtResource("1_itxqv")]
+
+[node name="green" parent="." unique_id=14822318 instance=ExtResource("2_v0l8b")]
+z_index = -1
+position = Vector2(695, 441)

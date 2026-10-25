@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://dktrrykv52k26"]
+
+[ext_resource type="Script" uid="uid://cw6ktbya41kt5" path="res://script/projectile.gd" id="1_u6xv6"]
+[ext_resource type="Texture2D" uid="uid://deretao0vjbog" path="res://assests/wake2.png" id="2_c0tm2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8vrlf"]
+atlas = ExtResource("2_c0tm2")
+region = Rect2(355.42957, 1511.459, 306.3427, 41.42737)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1vivr"]
+size = Vector2(129, 23)
+
+[node name="projectile" type="Area2D" unique_id=338435178]
+script = ExtResource("1_u6xv6")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1908910831]
+position = Vector2(733, 154.99994)
+scale = Vector2(0.41830066, 0.5731707)
+texture = SubResource("AtlasTexture_8vrlf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1330842849]
+position = Vector2(734.5, 154.5)
+shape = SubResource("RectangleShape2D_1vivr")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,0 +1,139 @@
+[gd_scene format=3 uid="uid://der6tds0yrmf5"]
+
+[ext_resource type="Texture2D" uid="uid://ok6eoqorafyt" path="res://assests/reactor.png" id="1_sgciq"]
+[ext_resource type="Texture2D" uid="uid://b4iwk2reb51vy" path="res://assests/scene.png" id="2_34c5d"]
+[ext_resource type="Script" uid="uid://dpdaxm3nnivji" path="res://script/reactor.gd" id="3_nmv26"]
+[ext_resource type="PackedScene" uid="uid://deuktw6n22cvl" path="res://scene/guy_only.tscn" id="4_ao5du"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v5gy4"]
+atlas = ExtResource("2_34c5d")
+region = Rect2(103.47803, 496.75177, 2250.976, 1029.5161)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1vivr"]
+atlas = ExtResource("1_sgciq")
+region = Rect2(0, 1196.68, 2375.4722, 1840.121)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8vrlf"]
+size = Vector2(192.00003, 153.5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_auskg"]
+atlas = ExtResource("1_sgciq")
+region = Rect2(1737.5251, 2511.1035, 648.9458, 519.1565)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8vrlf"]
+atlas = ExtResource("1_sgciq")
+region = Rect2(360.74384, 3062.707, 2059.4915, 445.29297)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1vivr"]
+size = Vector2(1299.8186, 198.31973)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v5gy4"]
+size = Vector2(626.6405, 935.9177)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qbdty"]
+size = Vector2(487.70874, 905.5871)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qbdty"]
+atlas = ExtResource("1_sgciq")
+region = Rect2(418.9358, 1278.2585, 144.7373, 1124.3354)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nmv26"]
+bg_color = Color(0.60038817, 0, 0.14733289, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_34c5d"]
+bg_color = Color(0.60038817, 0, 0.14733289, 1)
+
+[node name="ending" type="Node2D" unique_id=307636752]
+
+[node name="Sprite2D3" type="Sprite2D" parent="." unique_id=111836041]
+position = Vector2(147, 347.75)
+scale = Vector2(1, 1.276482)
+texture = SubResource("AtlasTexture_v5gy4")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1648609133]
+position = Vector2(650.00006, 258)
+scale = Vector2(0.41726312, 0.32214674)
+texture = SubResource("AtlasTexture_1vivr")
+
+[node name="reactor" type="Area2D" parent="." unique_id=1832839825]
+script = ExtResource("3_nmv26")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="reactor" unique_id=264804181]
+
+[node name="Panel" type="Panel" parent="reactor/CanvasLayer" unique_id=1859227022]
+offset_left = 37.0
+offset_top = 575.0
+offset_right = 607.0
+offset_bottom = 653.0
+
+[node name="Label" type="Label" parent="reactor/CanvasLayer/Panel" unique_id=846932076]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 4.0
+offset_right = 561.0
+offset_bottom = 70.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="reactor" unique_id=2120633630]
+position = Vector2(1006, 466.75)
+scale = Vector2(1.0000001, 1.0000001)
+shape = SubResource("RectangleShape2D_8vrlf")
+
+[node name="core" type="Sprite2D" parent="reactor" unique_id=493609656]
+position = Vector2(1013.375, 466.25)
+scale = Vector2(0.40856487, 0.3246629)
+texture = SubResource("AtlasTexture_auskg")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=726020808]
+position = Vector2(376, 779)
+scale = Vector2(1.0643516, 1.2224718)
+texture = SubResource("AtlasTexture_8vrlf")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D2" unique_id=1503720516]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D2/StaticBody2D" unique_id=1506268600]
+position = Vector2(299.97812, -55.54282)
+scale = Vector2(0.99999976, 0.9999998)
+shape = SubResource("RectangleShape2D_1vivr")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Sprite2D2/StaticBody2D" unique_id=367569245]
+position = Vector2(-647.04736, -482.84253)
+scale = Vector2(0.9999998, 0.9999998)
+shape = SubResource("RectangleShape2D_v5gy4")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Sprite2D2/StaticBody2D" unique_id=1891358839]
+position = Vector2(1072.1682, -513.03174)
+scale = Vector2(0.99999994, 0.99999994)
+shape = SubResource("RectangleShape2D_qbdty")
+
+[node name="Sprite2D4" type="Sprite2D" parent="." unique_id=798858115]
+position = Vector2(1189, 124)
+texture = SubResource("AtlasTexture_qbdty")
+
+[node name="guy" parent="." unique_id=1165027486 instance=ExtResource("4_ao5du")]
+position = Vector2(231, 509)
+
+[node name="restart" type="CanvasLayer" parent="." unique_id=1204082199]
+visible = false
+
+[node name="resb" type="Button" parent="restart" unique_id=520063030]
+offset_left = 550.0
+offset_top = 348.0
+offset_right = 644.0
+offset_bottom = 421.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.9490196, 0.9490196, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(1, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxFlat_nmv26")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_34c5d")
+text = "RESTART"
+
+[connection signal="pressed" from="restart/resb" to="reactor" method="_on_resb_pressed"]

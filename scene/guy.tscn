@@ -1,0 +1,165 @@
+[gd_scene format=3 uid="uid://cucajp28210mx"]
+
+[ext_resource type="Texture2D" uid="uid://b4iwk2reb51vy" path="res://assests/scene.png" id="1_6xqhc"]
+[ext_resource type="Texture2D" uid="uid://cxyxy0b6aglcx" path="res://assests/element.png" id="2_wvvsp"]
+[ext_resource type="PackedScene" uid="uid://deuktw6n22cvl" path="res://scene/guy_only.tscn" id="3_6xqhc"]
+[ext_resource type="Texture2D" uid="uid://deretao0vjbog" path="res://assests/wake2.png" id="3_gda7j"]
+[ext_resource type="Texture2D" uid="uid://cnsajth5v0nlv" path="res://assests/wake.png" id="5_mygoa"]
+[ext_resource type="Script" uid="uid://d1mkma8fw68he" path="res://script/area_2d.gd" id="6_mygoa"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6xqhc"]
+atlas = ExtResource("1_6xqhc")
+region = Rect2(106.015625, 485.09375, 2209.7813, 1082.1094)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d2pp6"]
+atlas = ExtResource("2_wvvsp")
+region = Rect2(216.82983, 0, 761.4292, 778.4193)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v5gy4"]
+atlas = ExtResource("1_6xqhc")
+region = Rect2(506.4983, 2799.1272, 1783.6003, 196.19556)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u7cuq"]
+atlas = ExtResource("2_wvvsp")
+region = Rect2(0, 762.5563, 2421.8015, 983.51245)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_auskg"]
+atlas = ExtResource("2_wvvsp")
+region = Rect2(1470.0154, 2031.6046, 1009.9846, 1332.5009)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8vrlf"]
+atlas = ExtResource("1_6xqhc")
+region = Rect2(409.57602, 2451.3174, 1959.879, 130.65869)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1vivr"]
+atlas = ExtResource("1_6xqhc")
+region = Rect2(428.82867, 2064.4414, 2009.5869, 198.06006)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o5tgd"]
+atlas = ExtResource("3_gda7j")
+region = Rect2(430.24902, 323.41638, 1886.8428, 815.3873)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1vivr"]
+size = Vector2(2556, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qbdty"]
+atlas = ExtResource("2_wvvsp")
+region = Rect2(-10.834717, 2088.234, 790.52954, 1380.0901)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ql4es"]
+atlas = ExtResource("5_mygoa")
+region = Rect2(1341.2742, 0, 1138.7258, 2020.9729)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8vrlf"]
+size = Vector2(95.5, 285)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v5gy4"]
+size = Vector2(65.5, 124)
+
+[node name="Main" type="Node2D" unique_id=1666981795]
+
+[node name="bg" type="Sprite2D" parent="." unique_id=2067425841]
+z_index = -5
+texture_filter = 1
+position = Vector2(661.0001, 206.93472)
+scale = Vector2(1.9909463, 0.8279755)
+texture = SubResource("AtlasTexture_6xqhc")
+
+[node name="Sprite2D8" type="Sprite2D" parent="." unique_id=35466602]
+position = Vector2(540.00006, 61)
+scale = Vector2(0.2441595, 0.23472475)
+texture = SubResource("AtlasTexture_d2pp6")
+
+[node name="Sprite2D4" type="Sprite2D" parent="." unique_id=858043568]
+z_index = -5
+texture_filter = 1
+position = Vector2(1307.75, 650)
+scale = Vector2(1.6693774, 1.7959183)
+texture = SubResource("AtlasTexture_v5gy4")
+
+[node name="Sprite2D9" type="Sprite2D" parent="." unique_id=17086498]
+z_index = -1
+position = Vector2(685, 434.00003)
+scale = Vector2(0.26664808, 0.22723013)
+texture = SubResource("AtlasTexture_u7cuq")
+
+[node name="Sprite2D7" type="Sprite2D" parent="." unique_id=466655973]
+z_index = -1
+texture_filter = 1
+position = Vector2(1107, 155)
+scale = Vector2(0.4305004, 0.51829267)
+texture = SubResource("AtlasTexture_auskg")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=935510346]
+z_index = -1
+texture_filter = 1
+position = Vector2(669, 510.6875)
+scale = Vector2(0.73577076, 0.37403867)
+texture = SubResource("AtlasTexture_8vrlf")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1496649118]
+z_index = -2
+texture_filter = 1
+position = Vector2(750, 464)
+scale = Vector2(0.62132907, 0.32575783)
+texture = SubResource("AtlasTexture_1vivr")
+
+[node name="Sprite2D10" type="Sprite2D" parent="." unique_id=1620556623]
+position = Vector2(-833.00006, 658.00006)
+scale = Vector2(0.7322375, 0.45337424)
+texture = SubResource("AtlasTexture_o5tgd")
+
+[node name="ground" type="StaticBody2D" parent="." unique_id=914440733]
+position = Vector2(194, 158.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ground" unique_id=63783530]
+position = Vector2(324, 358.5)
+shape = SubResource("RectangleShape2D_1vivr")
+
+[node name="guy" parent="." unique_id=1165027486 instance=ExtResource("3_6xqhc")]
+position = Vector2(-542, 432)
+
+[node name="Sprite2D3" type="Sprite2D" parent="." unique_id=1687634981]
+z_index = 2
+texture_filter = 1
+position = Vector2(642, 500)
+scale = Vector2(0.62132907, 0.32575783)
+texture = SubResource("AtlasTexture_1vivr")
+
+[node name="Sprite2D5" type="Sprite2D" parent="." unique_id=795390151]
+z_index = 1
+texture_filter = 1
+position = Vector2(742.00006, 512)
+scale = Vector2(0.5660155, 0.39962128)
+texture = SubResource("AtlasTexture_1vivr")
+
+[node name="Sprite2D6" type="Sprite2D" parent="." unique_id=1517849134]
+z_index = 2
+texture_filter = 1
+position = Vector2(150, 268)
+scale = Vector2(0.66835445, 0.64855075)
+texture = SubResource("AtlasTexture_qbdty")
+
+[node name="Sprite2D11" type="Sprite2D" parent="." unique_id=1771775982]
+position = Vector2(-179.99991, 642)
+scale = Vector2(0.35676628, 0.34455442)
+texture = SubResource("AtlasTexture_ql4es")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1620637024]
+position = Vector2(-788, 411)
+
+[node name="Sprite2D11" type="Sprite2D" parent="StaticBody2D" unique_id=457272027]
+position = Vector2(-28, 61.5)
+scale = Vector2(0.3813708, 0.32920793)
+texture = SubResource("AtlasTexture_ql4es")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1291524531]
+position = Vector2(-10.749939, -14.9999695)
+shape = SubResource("RectangleShape2D_8vrlf")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=780677781]
+script = ExtResource("6_mygoa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1940038458]
+position = Vector2(1245.25, 434)
+shape = SubResource("RectangleShape2D_v5gy4")

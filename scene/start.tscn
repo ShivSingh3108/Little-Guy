@@ -1,0 +1,178 @@
+[gd_scene format=3 uid="uid://bik2c6j7vkqab"]
+
+[ext_resource type="Script" uid="uid://bx3ri00sbo6qr" path="res://script/start.gd" id="1_bnuxd"]
+[ext_resource type="Texture2D" uid="uid://cnsajth5v0nlv" path="res://assests/wake.png" id="1_xmel7"]
+[ext_resource type="Texture2D" uid="uid://deretao0vjbog" path="res://assests/wake2.png" id="2_bhewb"]
+[ext_resource type="PackedScene" uid="uid://deuktw6n22cvl" path="res://scene/guy_only.tscn" id="3_bnuxd"]
+[ext_resource type="Texture2D" uid="uid://cri0u3ucyumtg" path="res://assests/1000051476.png" id="4_srnb1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1vivr"]
+atlas = ExtResource("1_xmel7")
+region = Rect2(686.1162, 2234.2817, 1793.8838, 1161.2598)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8vrlf"]
+atlas = ExtResource("2_bhewb")
+region = Rect2(384.89063, 202.13501, 2069.1533, 929.00757)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1vivr"]
+size = Vector2(2004.6438, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u7cuq"]
+atlas = ExtResource("1_xmel7")
+region = Rect2(574.03516, 650.79285, 839.04297, 607.07104)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d2pp6"]
+atlas = ExtResource("1_xmel7")
+region = Rect2(1356.1934, 0, 1123.8066, 1845.678)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v5gy4"]
+atlas = ExtResource("2_bhewb")
+region = Rect2(1039.4185, 1574.5325, 1440.5815, 992.3489)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o5tgd"]
+atlas = ExtResource("4_srnb1")
+region = Rect2(1033.2986, 1222.1288, 784.54395, 937.3749)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v5gy4"]
+size = Vector2(63, 43)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qbdty"]
+atlas = ExtResource("2_bhewb")
+region = Rect2(0, 1176.519, 919.7092, 860.2623)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_auskg"]
+atlas = ExtResource("1_xmel7")
+region = Rect2(0, 1254.4827, 881.08765, 1028.2229)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8vrlf"]
+size = Vector2(374.55173, 570.8839)
+
+[node name="start" type="Node2D" unique_id=1632397128]
+script = ExtResource("1_bnuxd")
+
+[node name="bg" type="Sprite2D" parent="." unique_id=1594595949]
+z_index = -5
+position = Vector2(883.6266, 346.61444)
+rotation = -3.1415927
+scale = Vector2(1.4738243, 0.657776)
+texture = SubResource("AtlasTexture_1vivr")
+
+[node name="ground" type="Sprite2D" parent="." unique_id=1450350892]
+position = Vector2(900, 799)
+scale = Vector2(1.4973416, 1)
+texture = SubResource("AtlasTexture_8vrlf")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="ground" unique_id=475323819]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ground/StaticBody2D" unique_id=1663372375]
+position = Vector2(215.8219, -248)
+shape = SubResource("RectangleShape2D_1vivr")
+
+[node name="grass2" type="Sprite2D" parent="." unique_id=1902857276]
+position = Vector2(607, 392)
+scale = Vector2(0.30810487, 0.3039539)
+texture = SubResource("AtlasTexture_u7cuq")
+
+[node name="roocks2" type="Sprite2D" parent="." unique_id=706552971]
+position = Vector2(475.4375, 325.0625)
+scale = Vector2(0.2129341, 0.21253389)
+texture = SubResource("AtlasTexture_d2pp6")
+
+[node name="element1" type="Sprite2D" parent="." unique_id=817850909]
+position = Vector2(219, 389)
+scale = Vector2(0.4161458, 0.3830645)
+texture = SubResource("AtlasTexture_v5gy4")
+
+[node name="roocks" type="Sprite2D" parent="." unique_id=1041156017]
+position = Vector2(1116, 281)
+scale = Vector2(0.24599287, 0.2668022)
+texture = SubResource("AtlasTexture_d2pp6")
+
+[node name="book" type="Area2D" parent="." unique_id=1640873178]
+
+[node name="Sprite2D" type="Sprite2D" parent="book" unique_id=1341021083]
+position = Vector2(1496, 503)
+rotation = -0.3926991
+scale = Vector2(0.048248895, 0.044702552)
+skew = -0.37350047
+texture = SubResource("AtlasTexture_o5tgd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="book" unique_id=1780056919]
+position = Vector2(1492.5, 501.5)
+shape = SubResource("RectangleShape2D_v5gy4")
+
+[node name="guy" parent="." unique_id=1165027486 instance=ExtResource("3_bnuxd")]
+position = Vector2(320, 427)
+
+[node name="AnimatedSprite2D" parent="guy" index="0" unique_id=810675884]
+animation = &"idle2"
+frame_progress = 0.0
+
+[node name="element2" type="Sprite2D" parent="." unique_id=1148289411]
+position = Vector2(31, 315)
+scale = Vector2(0.3618063, 0.36976743)
+texture = SubResource("AtlasTexture_qbdty")
+
+[node name="rock" type="Sprite2D" parent="." unique_id=1729015274]
+position = Vector2(-56, 393)
+scale = Vector2(0.60896707, 0.4274074)
+texture = SubResource("AtlasTexture_auskg")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="rock" unique_id=760281221]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="rock/StaticBody2D" unique_id=974715191]
+position = Vector2(64.04287, 124.00348)
+shape = SubResource("RectangleShape2D_8vrlf")
+
+[node name="rock2" type="Sprite2D" parent="." unique_id=894198411]
+position = Vector2(-231, 85.00003)
+scale = Vector2(0.60896707, 0.4274074)
+texture = SubResource("AtlasTexture_auskg")
+
+[node name="rock3" type="Sprite2D" parent="." unique_id=538748568]
+position = Vector2(-285, 411.00003)
+scale = Vector2(0.60896707, 0.4274074)
+texture = SubResource("AtlasTexture_auskg")
+
+[node name="roocks3" type="Sprite2D" parent="." unique_id=2078450215]
+position = Vector2(896, 641)
+scale = Vector2(0.2129341, 0.21253389)
+texture = SubResource("AtlasTexture_d2pp6")
+
+[node name="grass3" type="Sprite2D" parent="." unique_id=1497938740]
+position = Vector2(822.375, 582.625)
+scale = Vector2(0.351907, 0.3677924)
+texture = SubResource("AtlasTexture_u7cuq")
+
+[node name="grass" type="Sprite2D" parent="." unique_id=2058421314]
+position = Vector2(0, 535)
+scale = Vector2(0.30810487, 0.3039539)
+texture = SubResource("AtlasTexture_u7cuq")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=975948785]
+
+[node name="Panel" type="Panel" parent="CanvasLayer" unique_id=1993194805]
+offset_left = 6.0
+offset_top = 486.0
+offset_right = 882.0
+offset_bottom = 648.0
+
+[node name="Label" type="Label" parent="CanvasLayer/Panel" unique_id=1042337009]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 35.0
+offset_right = 727.0
+offset_bottom = 124.0
+
+[node name="Label2" type="Label" parent="CanvasLayer/Panel" unique_id=997679261]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 5.0
+offset_right = 820.0
+offset_bottom = 35.0
+text = "PRESS E"
+
+[connection signal="body_entered" from="book" to="." method="_on_book_body_entered"]
+[connection signal="body_exited" from="book" to="." method="_on_book_body_exited"]
+
+[editable path="guy"]
