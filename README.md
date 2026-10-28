@@ -9,7 +9,6 @@ Th game has 5 Scenes:
 * 3rd Scene - Has a static enemy which shoots projectiles, also there's dialogue as well as and interactive point  .
 * 4th - A simple Time based dodging mini game scene.
 * 5th - Last Scene which also has a interactive point.
-* Searchbar - Redirects you to google results based on your search.
 
 ## About 
 Little Guy a robot sets on the adventure to Fulfill his masters plan of providing earth a immense energy source and also defeat the opponenets.
